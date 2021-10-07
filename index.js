@@ -45,11 +45,11 @@ Use the copy function below to do the following:
   2. Return a copy of the received array  
 */
 
-function copy(/*your code here*/){
-  /*your code here*/
-}    
-
-
+function copy(array){
+ let newArray = [...array]
+  return newArray;
+}
+console.log(copy(originalFlavors));
 
 
 
@@ -64,10 +64,14 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(/*your code here*/){
- /*your code here*/
+function is31Flavors(array){
+ if (array.length === 31) {
+   return true;
+ }else{
+   return false;
+ }
 }
-
+  console.log(is31Flavors(originalFlavors));
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
 
@@ -81,9 +85,12 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
- /*your code here*/
+function addFlavor(array, flavor){
+ array.unshift(flavor);
+console.log(array);
+ return array; 
 }
+console.log(addFlavor(originalFlavors, "Rainbow Sherbert"));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -160,10 +167,16 @@ Use the filterByWord function below to do the following:
   DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/){
-  /*your code here*/
-}
+function filterByWord(array, string){
+  let filteredArray = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].includes(string)){
+      filteredArray.push(array[i])
+    }
+    return filteredArray;
+  }
 
+console.log(filterByWord(original))
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
 
@@ -177,9 +190,18 @@ Use the getAverageWordLength function below to do the following:
   For example: getAverageWordLength(originalFlavors) should return a number between 0 and 3.     
 */
 
-function getAverageWordLength(/*code here*/){
-  /*code here*/
-}
+// function getAverageWordLength(array){
+//  let total = 0;
+//  for(let items in array){
+//    let name = array[items];
+//    console.log(name);
+//    for(let space in name.split(" ")){
+//      total++
+//     return total/array.length;
+//    }
+//  }
+
+// }
 
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪
@@ -301,3 +323,4 @@ module.exports = {
   getRandomFlavors
 }
 
+}
